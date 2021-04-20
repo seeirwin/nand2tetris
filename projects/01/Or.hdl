@@ -11,14 +11,13 @@
  a OR b = Not(Not(a) AND Not(b))
  */
 
-CHIP Or {
+CHIP SimpleOr {
     IN a, b;
     OUT out;
 
     PARTS:
     Nand(a=a, b=a, out=nota);
     Nand(a=b, b=b, out=notb);
-    Nand(a=nota, b=notb, out=notaNandnotb);
-    Nand(a=notaNandnotb, b=notaNandnotb, out=andOut);
-    Nand(a=andOut, b=andOut, out=out);
+    Nand(a=nota, b=notb, out=out);
+   
 }
