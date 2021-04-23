@@ -8,7 +8,7 @@
  * out = a if sel == 00
  *       b if sel == 01
  *       c if sel == 10
- *       d if sel == 11
+ *       d if sel == 11s
  */
 
 CHIP Mux4Way16 {
