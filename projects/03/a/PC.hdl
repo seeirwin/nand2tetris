@@ -16,5 +16,12 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Register, Inc16, Logic Gates
+
+ 	Register(in=toReg, load=true, out=out, out=val);
+ 	Inc16(in=val, out=incremented);
+ 	Mux16(a=val, b=incremented, sel=inc, out=toLoad);
+ 	Mux16(a=toLoad, b=in, sel=load, out=toReset);
+ 	Mux16(a=toReset, b=false, sel=reset, out=toReg);
+
 }
